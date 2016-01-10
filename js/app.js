@@ -23,6 +23,11 @@ oa.config(['$stateProvider', '$urlRouterProvider',
                 templateUrl: 'templates/meeting/meeting.html',
                 controller: ''
             })
+            .state('admin', {
+                url: '/admin',
+                templateUrl: 'templates/admin.html',
+                controller: 'AdminCtrl'
+            })
 
     }
 ]);

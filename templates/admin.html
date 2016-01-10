@@ -1,0 +1,90 @@
+<div class="row">
+	<div class="col-lg-3">
+		<div class="widget">
+			<div class="widget-header">
+				<i class="fa fa-users" ng-class="icon"></i> Users
+				<div class="pull-right">
+					<input type="text" placeholder="Search" class="form-control input-sm" />
+				</div>
+			</div>
+			<div class="medium no-padding">
+				<div class="table-responsive">
+					<table class="table">
+						<thead>
+							<th class="text-center">English Name</th><th class="text-center">Edt</th><th class="text-center">Del</th>
+						</thead>
+						<tbody>
+							<tr ng-repeat="user in users">
+								<td ng-click="showUser(user)" class="text-center">{{user.eName}}</td>
+								<td class="text-center"><a href=""  ng-click="editUser(user)"><span uibTooltip="Edit User" class="text-success"><i class="fa fa-edit"></i></span></a></td>
+								<td class="text-center"><a href=""  ng-click="removeUser(user)"><span uibTooltip="Delete User" class="text-danger"><i class="fa fa-remove"></i></span></a></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-5">
+		<div class="widget">
+			<div class="widget-header">
+				<i class="fa fa-user" ng-class="icon"></i> User Details
+				<div class="pull-right" ng-if="isManage">
+					<button class="btn btn-sm btn-info" ng-click="okUser(user)">Submit</button>
+					<button class="btn btn-sm btn-warning" ng-click="cancelUser()">Cancel</button>
+				</div>
+			</div>
+			<div class="medium no-padding">
+				<div class="table-responsive">
+					<table class="table">
+						<tbody>
+						<tr><td>ENGLISH NAME</td><td ng-if="!isManage">{{user.eName}}</td><td ng-if="isManage"><input class="form-control" type="text" placeholder="{{user.eName}}"></td></tr>
+						<tr><td>CHINESE NAME</td><td ng-if="!isManage">{{user.cName}}</td><td ng-if="isManage"><input class="form-control" type="text" placeholder="{{user.cName}}"></td></tr>
+						<tr><td>EMAIL</td><td ng-if="!isManage">{{user.email}}</td><td ng-if="isManage"><input class="form-control" type="text" placeholder="{{user.email}}"></td></tr>
+						<tr><td>PHONE</td><td ng-if="!isManage">{{user.phone}}</td><td ng-if="isManage"><input class="form-control" type="text" placeholder="{{user.phone}}"></td></tr>
+						<tr><td>QQ</td><td ng-if="!isManage">{{user.qq}}</td><td ng-if="isManage"><input class="form-control" type="text" placeholder="{{user.qq}}"></td></tr>
+						<tr><td>DEPARTMENT</td><td ng-if="!isManage">{{user.department}}</td><td ng-if="isManage"><input class="form-control" type="text" placeholder="{{user.department}}"></td></tr>
+						<tr><td>LEADER</td><td ng-if="!isManage">{{user.leader}}</td><td ng-if="isManage"><input class="form-control" type="text" placeholder="{{user.leader}}"></td></tr>
+						<tr><td>TEAM</td><td ng-if="!isManage">{{user.team}}</td><td ng-if="isManage"><input class="form-control" type="text" placeholder="{{user.team}}"></td></tr>
+						<tr><td>POSITION</td><td ng-if="!isManage">{{user.position}}</td><td ng-if="isManage"><input class="form-control" type="text" placeholder="{{user.position}}"></td></tr>
+						<tr><td>HIREDATE</td><td ng-if="!isManage">{{user.hireDate}}</td><td ng-if="isManage"><input class="form-control" type="text" placeholder="{{user.hireDate}}"></td></tr>
+						<tr><td>STATUS</td><td ng-if="!isManage">{{user.hireStatus}}</td><td><select class="form-control" ng-if="isManage" ng-model="user.hireStatus" ng-options="status for status in userStats.statuses"></select></td></tr>
+						<tr><td>TOSTATUS</td><td ng-if="!isManage">{{user.toStatus}}</td><td><select class="form-control" ng-if="isManage" ng-model="user.toStatus" ng-options="status for status in userStats.statuses"></select></td></tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-4">
+		<div class="widget">
+			<div class="widget-header">
+				<i class="fa fa-tasks" ng-class="icon"></i> DETAILS
+				<div class="pull-right" ng-if="isManage">
+					<button class="btn btn-sm btn-info" ng-click="okUser(user)">Submit</button>
+					<button class="btn btn-sm btn-warning" ng-click="cancelUser()">Cancel</button>
+				</div>
+			</div>
+			<div class="medium no-padding">
+				<div class="table-responsive">
+					<table class="table table-striped">
+						<thead>
+						<tr><th class="text-center">VACATYPE</th><th>REMAINS</th><th>STANDARD</th><th>REST</th></tr>
+						</thead>
+						<tbody>
+						<tr ng-if="!isManage" ng-repeat="hday in user.holidays">
+							<td class="text-center">{{hday.type}}</td><td>{{hday.remain}}</td><td>{{hday.standard}}</td><td>{{hday.rest}}</td>
+						</tr>
+						<tr ng-if="isManage" ng-repeat="hday in user.holidays">
+							<td class="text-center">{{hday.type}}</td>
+							<td><input class="form-control" type="text" placeholder="{{hday.remain}}"></td>
+							<td><input class="form-control" type="text" placeholder="{{hday.standard}}"></td>
+							<td><input class="form-control" type="text" placeholder="{{hday.rest}}"></td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,56 @@
+<div class="row">
+	<div class="col-lg-10 col-lg-offset-1">
+		<div class="widget">
+			<div class="widget-header">
+				<i class="fa fa-user" ng-class="icon"></i> Manage User
+				<!--<div class="pull-right"><a href="" ng-click="manageUser(user)">Manage</a></div>-->
+			</div>
+			<div class="medium no-padding">
+				<div class="table-responsive">
+					<table class="table">
+						<tbody>
+							<tr><td>ENGLISH NAME</td><td><input type="text" ng-model="user.eName"></td></tr>
+							<tr><td>CHINESE NAME</td><td><input type="text" ng-model="user.cName"></td></tr>
+							<tr><td>EMAIL</td><td><input type="text" ng-model="user.email"</td></tr>
+							<tr><td>PHONE</td><td><input type="text" ng-model="user.phone"></td></tr>
+							<tr><td>QQ</td><td><input type="text" ng-model="user.qq"></td></tr>
+							<tr><td>DEPARTMENT</td><td><input type="text" ng-model="user.department"></td></tr>
+							<tr><td>LEADER</td><td><input type="text" ng-model="user.leader"></td></tr>
+							<tr><td>TEAM</td><td><input type="text" ng-model="user.team"></td></tr>
+							<tr><td>POSITION</td><td><input type="text" ng-model="user.position"></td></tr>
+							<tr><td>HIREDATE</td><td><input type="text" ng-model="user.hireDate"></td></tr>
+							<tr><td>STATUS</td><td><select ng-model="user.hireStatus" ng-options="status for status in userStats.statuses"></select></td></tr>
+							<tr><td>TOSTATUS</td><td><select ng-model="user.toStatus" ng-options="status for status in userStats.statuses"></select></td></tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="modal-footer">
+			<button class="btn btn-primary" type="button" ng-click="ok()">Submit</button>
+			<button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+		</div>
+	</div>
+	<!--<div class="col-lg-6">-->
+		<!--<div class="widget">-->
+			<!--<div class="widget-header">-->
+				<!--<i class="fa fa-tasks" ng-class="icon"></i> HOLIDAY DETAILS-->
+				<!--&lt;!&ndash;<div class="pull-right"><a href="#">Manage</a></div>&ndash;&gt;-->
+			<!--</div>-->
+			<!--<div class="medium no-padding">-->
+				<!--<div class="table-responsive">-->
+					<!--<table class="table table-striped">-->
+						<!--<thead>-->
+							<!--<tr><th class="text-center">VACATYPE</th><th>REMAINS</th><th>STANDARD</th><th>REST</th></tr>-->
+						<!--</thead>-->
+						<!--<tbody>-->
+							<!--<tr ng-repeat="hday in user.holidays">-->
+								<!--<td class="text-center">{{hday.type}}</td><td>{{hday.remain}}</td><td>{{hday.standard}}</td><td>{{hday.rest}}</td>-->
+							<!--</tr>-->
+						<!--</tbody>-->
+					<!--</table>-->
+				<!--</div>-->
+			<!--</div>-->
+		<!--</div>-->
+	<!--</div>-->
+</div>
