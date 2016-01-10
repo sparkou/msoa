@@ -1,0 +1,22 @@
+2016-01-10 13:51:37,830 - [INFO] - from play in pool-6-thread-5 
+Listening for HTTP on /0:0:0:0:0:0:0:0:9000
+
+2016-01-10 13:52:36,401 - [INFO] - from application in play-internal-execution-context-1 
+ReactiveMongoPlugin starting...
+
+2016-01-10 13:52:36,412 - [INFO] - from application in play-internal-execution-context-1 
+ReactiveMongoPlugin successfully started with db 'msauto'! Servers:
+		[localhost:27017]
+
+2016-01-10 13:52:36,416 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2016-01-10 13:52:51,042 - [INFO] - from play in play-akka.actor.default-dispatcher-3 
+Starting application default Akka system.
+
+2016-01-10 22:48:13,658 - [INFO] - from play in pool-6-thread-5 
+Shutdown application default Akka system.
+
+2016-01-10 22:48:13,717 - [INFO] - from application in pool-6-thread-5 
+ReactiveMongoPlugin stops, closing connections...
+
